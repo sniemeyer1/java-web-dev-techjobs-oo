@@ -71,7 +71,7 @@ public class JobTest {
     public void onlyIdValue(){
         Job job0 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
         assertTrue("It should should return, “OOPS! This job does not seem to exist.”", job0.toString() == "OOPS! This job does not seem to exist.");
-        System.out.println(job0);
+        //System.out.println(job0);
     }
 
 }

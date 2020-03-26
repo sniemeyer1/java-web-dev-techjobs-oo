@@ -9,6 +9,6 @@ public class Main {
         Job job4 = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         Job job6 = new Job("", new Employer(""), new Location(""), new PositionType(""), new CoreCompetency(""));
 
-       System.out.println(job6.toString());
+       System.out.println(job6.toString() + job1.toString() + job2.toString() + job3.toString() + job4.toString());
     }
 }
