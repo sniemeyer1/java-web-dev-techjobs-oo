@@ -17,7 +17,6 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
-
     public Job() {
         id = nextId;
         nextId++;
@@ -32,6 +31,41 @@ public class Job {
         this.coreCompetency = coreCompetency;
     }
 
+    public String toString(){
+        int noDataCounter = 0;
+        if (name.equals("")) {
+            noDataCounter++;
+            name = "Data not available.";
+        }
+        if (location.getValue().equals("")){
+            noDataCounter++;
+            location.setValue("Data not available.");
+        }
+        if (positionType.getValue().equals("")){
+            noDataCounter++;
+            positionType.setValue("Data not available.");
+        }
+        if (coreCompetency.getValue().equals("")){
+            noDataCounter++;
+            coreCompetency.setValue("Data not available.");
+        }
+        if (employer.getValue().equals("")){
+            noDataCounter++;
+            employer.setValue("Data not available.");
+        }
+        if (noDataCounter == 5){
+            return "OOPS! This job does not seem to exist.";
+        } else {
+            return "\n" +
+                    "ID: " + id + "\n" +
+                    "Name: " + name + "\n" +
+                    "Employer: " + employer + "\n" +
+                    "Location: " + location + "\n" +
+                    "Position: " + positionType + "\n" +
+                    "Core Competency: " + coreCompetency + "\n" +
+                    "\n";
+        }
+    }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
